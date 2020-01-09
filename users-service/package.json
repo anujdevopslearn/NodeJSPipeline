@@ -2,10 +2,6 @@
   "name": "users-service",
   "version": "1.0.0",
   "description": "Basic service for retrieving user information from the directory.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/dwmkerr/node-docker-microservice.git"
-  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
