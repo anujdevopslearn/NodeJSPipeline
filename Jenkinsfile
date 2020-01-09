@@ -9,8 +9,9 @@ node() {
 
        stage('NPM Install'){
          sh 'node -v'
-         sh 'npm prune'
-         sh 'npm install'
+         dir('users-service') {
+		sh "npm install"
+		 }
        }
        stage('NPM Unit Test'){
 		 sh 'npm test'
