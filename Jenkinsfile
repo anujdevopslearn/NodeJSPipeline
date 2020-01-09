@@ -10,11 +10,13 @@ node() {
        stage('NPM Install'){
          sh 'node -v'
          dir('users-service') {
-		sh "npm install"
+			sh "npm install"
 		 }
        }
        stage('NPM Unit Test'){
-		 sh 'npm test'
+		 dir('users-service') {
+			sh "npm test"
+		 }
        }
 
        stage('Container Build'){
@@ -27,14 +29,13 @@ node() {
 	   
 	   stage('Node Integration Testing'){
 		 dir('integration-test') {
+		    sh "ls -lart"
 			sh "npm install && npm start"
 		 }
        }
 	   
        stage('Cleanup'){
-	     sh 'npm prune'
 		 sh 'npm cache clean'
-         sh 'rm node_modules -rf'
 		 sh 'docker-compose down'
 
          mail body: 'project build successful',
