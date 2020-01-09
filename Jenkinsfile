@@ -29,8 +29,8 @@ node() {
 	   
 	   stage('Node Integration Testing'){
 		 dir('integration-test') {
-		    sh "ls -lart"
-			sh "npm install && npm start"
+		    sleep 20
+		    sh "npm install && npm start"
 		 }
        }
 	   
