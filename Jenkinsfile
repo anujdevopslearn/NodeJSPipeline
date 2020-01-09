@@ -55,7 +55,7 @@ node() {
             replyTo: 'anuj_sharma401@yahoo.com',
             subject: 'project build failed',
             to: 'anuj_sharma401@yahoo.com'
-
+	sh "docker-compose down"
         throw err
     }
 
