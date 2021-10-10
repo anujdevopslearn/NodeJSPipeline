@@ -28,7 +28,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Node Build Process
         run: |
+          cd users-service
+          pwd
           npm install
           npm run test
           npm run build --if-present
-          
